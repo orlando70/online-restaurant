@@ -6,7 +6,7 @@ const Product = () => {
     const [size, setSize] = useState(0)
     const Food = {
         id: 1,
-        img: "/img/food.jpg",
+        img: "/img/food5.jpg",
         name: "Lorenzo",
         price: [19.9, 23.9, 27.9],
         desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nobis ipsam nam, velit corporis ut tempora id voluptatum odit placeat nostrum cupiditate suscipit, perspiciatis illum cum. Libero rem perspiciatis quas!'
@@ -15,7 +15,7 @@ const Product = () => {
         <div className={styles.container}>
             <div className={styles.left}>
                 <div className={styles.imgContainer}>
-                    <Image src={Food.img} alt="" objectfit='cover' layout='fill' />
+                    <Image src={Food.img} alt="" objectfit='contain' layout='fill' />
                 </div>
             </div>
             <div className={styles.right}>
