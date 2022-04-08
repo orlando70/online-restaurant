@@ -29,7 +29,7 @@ const Order = () => {
                         <span className={styles.name}> NJOKU O. NJOKU</span>
                     </td>
                     <td>
-                        <span className={styles.address}> No45 Ikwerre Road </span>
+                        <span className={styles.address}> No 45 Ikwerre Road </span>
                     </td>
                     <td>
                         <span className={styles.total}> $40.40</span>
@@ -70,7 +70,7 @@ const Order = () => {
             </div>
             <div className={styles.right}>
                 <div className={styles.wrapper}>
-                    <h2 className={styles.titlen}> CAR TOTAL</h2>
+                    <h2 className={styles.titlen}> CART TOTAL</h2>
                     <div className={styles.totalText}>
                         <b className={styles.totalTextTitle}> Subtotal:</b> $34.45
                     </div>
