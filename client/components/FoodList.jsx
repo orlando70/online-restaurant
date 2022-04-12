@@ -1,7 +1,7 @@
 import styles from '../styles/FoodList.module.css'
 import FoodCard from './FoodCard'
 
-const FoodList = () => {
+const FoodList = ({ Foods }) => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>
@@ -13,14 +13,9 @@ const FoodList = () => {
                 cum sed, delectus quo nisi, aperiam, molestiae ullam qui.
             </p>
             <div className={styles.wrapper}>
-                <FoodCard />
-                <FoodCard />
-                <FoodCard />
-                <FoodCard />
-                <FoodCard />
-                <FoodCard />
-                <FoodCard />
-                <FoodCard />
+                {Foods.map((food) => (
+                    <FoodCard key={food._id} food={food}/>
+                ))}
             </div>
         </div>
     )
