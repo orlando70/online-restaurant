@@ -2,10 +2,15 @@ import styles from '../../styles/Product.module.css'
 import Image from 'next/image'
 import { useState } from 'react'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../redux/cartSlice'
 
 const Product = ({ Food }) => {
-    const [price, setPrice] = useState(0)
-    const [size, setSize] = useState(0)
+    const [price, setPrice] = useState(Food.prices[0]);
+    const [size, setSize] = useState(0);
+    const [quantity, setQuantity] = useState(1)
+    const [extras, setExtras] = useState([])
+    const dispatch = useDispatch();
 
     const changePrice = (number) => {
         setPrice(price + number);
@@ -17,6 +22,22 @@ const Product = ({ Food }) => {
         changePrice(difference)
     }
 
+    const handleChange = (e, option) => {
+        const checked = e.target.checked;
+
+        if (checked) {
+            changePrice(option.price)
+            setExtras([...extras, option])
+        } else {
+            changePrice(-option.price)
+            setExtras(extras.filter((extra) => {extra._id !== option._id}))
+        }
+    }
+
+    const handleClick = () => {
+        dispatch(addProduct({...Food, price, extras, quantity}))
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.left}>
@@ -26,7 +47,7 @@ const Product = ({ Food }) => {
             </div>
             <div className={styles.right}>
                 <h1 className={styles.title}>{Food.title}</h1>
-                <span className={styles.price}>${Food.prices[size]}</span>
+                <span className={styles.price}>${price}</span>
                 <p className={styles.desc}> {Food.desc} </p>
                 <h3 className={styles.choose}>Choose the size</h3>
                 <div className={styles.sizes}>
@@ -59,8 +80,8 @@ const Product = ({ Food }) => {
 
                 </div>
                 <div className={styles.add}>
-                    <input type="number" defaultValue={1} className={styles.quantity} />
-                    <button className={styles.button}> Add to Cart </button>
+                    <input onChange={(e) => setQuantity(e.target.value)} type="number" defaultValue={1} className={styles.quantity} />
+                    <button className={styles.button} onClick={handleClick}> Add to Cart </button>
                 </div>
             </div>
         </div>
