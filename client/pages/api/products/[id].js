@@ -4,13 +4,13 @@ import { ServiceError } from '../../../lib/errors';
 
 
 export default async function handler(req, res) {
-    const { method } = req;
+    const { method, query: {id} } = req;
 
     dbConnect()
 
     if (method === 'GET') {
         try {
-            const product = await Product.find()
+            const product = await Product.findById(id)
             res.status(200).json(product)
         } catch (e) {
             throw new ServiceError(e)
