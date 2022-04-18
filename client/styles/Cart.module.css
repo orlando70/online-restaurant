@@ -105,3 +105,16 @@
         width: 100%;
     }
 }
+
+.paymentMethods {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cash {
+    padding: 10px 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
