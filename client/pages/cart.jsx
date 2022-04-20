@@ -1,18 +1,37 @@
 import styles from '../styles/Cart.module.css'
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
+import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import {
     PayPalScriptProvider,
     PayPalButtons,
     usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
+import {useRouter} from 'next/router'
+import reset from 'redux/cartSlice'
+import OrderDetails from '../components/OrderDetails';
 
 const Cart = () => {
+    const cart = useSelector((state) => state.cart)
     const [open, setOpen] = useState(false);
-    const amount = "2";
+    const [cash, setCash] = useState(false);
+    const amount = cart.total;
     const currency = "USD";
     const style = { "layout": "vertical" };
+    const router = useRouter();
+    const dispatch = useDispatch();
+    const style = {layout: 'vertical'}
+
+    const createOrder = async (data) => {
+        try {
+            const order = await axios.post('http://localhost:3000/api/orders', data)
+            order.status === 201 && router.push(`/orders/${res.data._id}`)
+            dispatch(reset())
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart)
@@ -58,8 +77,14 @@ const Cart = () => {
                         });
                 }}
                 onApprove={function (data, actions) {
-                    return actions.order.capture().then(function () {
-                        // Your code here after capture the order
+                    return actions.order.capture().then(function (details) {
+                        const shipping = details.purchase_units[0].shipping;
+                        create({
+                            customer: shipping.name.full_name,
+                            address: shipping.address.address_line_1,
+                            total: cart.total,
+                            method: 1
+                        })
                     });
                 }}
             />
@@ -124,7 +149,7 @@ const Cart = () => {
                     </div>
                     {open ? (
                         <div className={styles.paymentMethods}>
-                            <button className={styles.cash}>CASH ON DELIVERY</button>
+                            <button className={styles.cash} onClick={() => setCash(true)}>CASH ON DELIVERY</button>
                             <PayPalScriptProvider
                                 options={{
                                     "client-id": "AeTL2worGaN33pRAbZFW_fDpfY74sovxRyzcI2r0tBm30YCs_FV354i4qwAvTor0FcizwfPLTLoAS8l4",
@@ -144,6 +169,9 @@ const Cart = () => {
                     )}
                 </div>
             </div>
+            {cash && (
+                <OrderDetails total={cart.total} createOrder={createOrder}/>
+            )}
         </div>
     )
 }
