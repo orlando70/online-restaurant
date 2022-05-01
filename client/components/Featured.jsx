@@ -7,8 +7,8 @@ const Featured = () => {
     const [index, setIndex] = useState(0);
     const delay = 5000;
     const images = [
-        "/img/featured4.jpg",
-        "/img/featured.jpg",
+        "/img/featured1.jpg",
+        "/img/featured1.jpg",
         "/img/featured1.jpg",
     ]
 
@@ -42,12 +42,6 @@ const Featured = () => {
                     </div>
                 ))}
             </div>
-            {/* <div className={styles.arrowContainer} style={{right: 0}} onClick={()=> handleArrow("r")}>
-                <Image src="/img/arrow-right.png" alt="" layout='fill' objectFit='contain'/>
-            </div>
-            <div className={styles.arrowContainer} style={{left: 0}} onClick={()=> handleArrow("l")} >
-                <Image src="/img/arrow-left.png" alt="" layout='fill' objectFit='contain'/>
-            </div> */}
         </div>
     )
 }

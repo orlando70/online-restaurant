@@ -24,7 +24,7 @@ const Order = ({Order}) => {
                 </tr>
                 <tr className={styles.tr}>
                     <td>
-                        <span className={styles.id}> {Order.id} </span>
+                        <span className={styles.id}> {Order._id} </span>
                     </td>
                     <td> 
                         <span className={styles.name}> {Order.customer} </span>

@@ -3,33 +3,36 @@ import Orders from '../../../models/Orders'
 import { ServiceError } from '../../../lib/errors';
 
 
-export default async function handler (req, res) {
-    const { method, query:{id} } = req;
+export async function handler(req, res) {
+    const { method, query: { id } } = req;
 
-    dbConnect().then(async ()=>{
-        if (method === 'GET') {
-            try {
-                const order = Orders.findById(id);
-                res.status(200).json(order)
-            } catch (error) {
-                res.status(500).json(error)
-            }
+    await dbConnect();
+    if (method === 'GET') {
+        try {
+            const order = await Orders.findById(id);
+            res.status(200).json(order)
+        } catch (error) {
+            res.status(500).json(error)
         }
-        if (method === 'PUT') {
-            try {
-                
-            } catch (error) {
-                console.log(error);
-            }
+    }
+    if (method === 'PUT') {
+        try {
+            await Orders.findByIdAndUpdate(id, req.body, {
+                new: true,
+            });
+            res.status(200).json({message: 'updated successfully.'})
+        } catch (error) {
+            res.status(500).json(error)
         }
-        if (method === 'DELETE') {
-            try {
-                
-            } catch (error) {
-                console.log(error);
-            }
+    }
+    if (method === 'DELETE') {
+        try {
+            await Orders.findByIdAndDelete(id);
+            res.status(200).json({message: 'successfully deleted.'})
+        } catch (error) {
+            res.status(500).json(error)
         }
-    })
+    }
 }
 
 export default handler;
