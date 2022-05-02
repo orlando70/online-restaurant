@@ -95,7 +95,16 @@ const Index = ({orders, foods}) => {
     )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+    const cookies = ctx.req?.cookies || ''
+    if (cookies.token !== process.env.TOKEN) {
+        return {
+            redirect: {
+                destination: '/admin/login',
+                permanent: false
+            }
+        }
+    }
     const foodList = await axios.get('http://localhost:3000/api/products')
     const orderList = await axios.get('http://localhost:3000/api/orders')
 
