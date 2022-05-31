@@ -17,14 +17,23 @@ const Index = ({orders, foods}) => {
         }
     }
 
-    const handleNextStage = async (id) => {
-        const order = orderList.filter((order) => order._id === id)[0]
+    const handleNextStage = async (order) => {
+        let statusOrderIndex = status.findIndex((curr, idx)=> idx === order.status)
+
+        if(statusOrderIndex >= -1 && statusOrderIndex < status.length - 1){
+            statusOrderIndex =  statusOrderIndex + 1
+        }
         try {
-            const res = await axios.put('http://localhost:3000/api/orders/' + id, {status: order.status + 1})
-            setOrderList([
-                ...orderList.filter(order => order._id !== id),
-                res.data,
-            ])
+            const res = await axios.put('http://localhost:3000/api/orders/' + order._id, { status: statusOrderIndex }
+            )
+            const products = await axios.get('http://localhost:3000/api/orders');
+
+            setOrderList(products.data)
+
+            // setOrderList( new Set([
+            //     ...orderList,
+            //     // res.data,
+            // ]))
         } catch (error) {
             console.log(error);
         }
@@ -84,7 +93,7 @@ const Index = ({orders, foods}) => {
                             <td>{order.method === 0 ? <span>cash</span> : <span>paid</span>}</td>
                             <td>{status[order.status]}</td>
                             <td>
-                                <button onClick={() => handleNextStage(order._id)}>Next stage</button>
+                                <button onClick={() => handleNextStage(order)}>Next stage</button>
                             </td>
                         </tr>
                     </tbody>

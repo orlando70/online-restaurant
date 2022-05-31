@@ -2,14 +2,17 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../styles/Featured.module.css'
 import { useState, useEffect, useRef } from 'react'
+import Slide1 from '../slides/slide1'
+import Slide2 from '../slides/slide2'
+import Slide3 from '../slides/slide3'
 
 const Featured = () => {
     const [index, setIndex] = useState(0);
     const delay = 5000;
     const images = [
-        "/img/featured1.jpg",
-        "/img/featured1.jpg",
-        "/img/featured1.jpg",
+        <Slide1/>,
+        <Slide2/>,
+        <Slide3/>,
     ]
 
     const timeoutRef = useRef(null);
@@ -38,7 +41,7 @@ const Featured = () => {
             <div className={styles.wrapper} style={{transform:`translateX(${- 100 * index }vw)`}}>
                 {images.map((img, i) => (
                     <div className={styles.imageContainer} key={i}>
-                        <Image src={img} alt="" layout='fill' objectFit='cover'/>
+                        {img}
                     </div>
                 ))}
             </div>

@@ -71,7 +71,7 @@ const Order = ({Order}) => {
             </div>
             <div className={styles.right}>
                 <div className={styles.wrapper}>
-                    <h2 className={styles.titlen}> CART TOTAL</h2>
+                    <h2 className={styles.title}> CART TOTAL</h2>
                     <div className={styles.totalText}>
                         <b className={styles.totalTextTitle}> Subtotal:</b> ${Order.total}
                     </div>

@@ -18,7 +18,6 @@ export async function handler(req, res) {
     if (method === 'POST') {
         try {
             const order = await Orders.create(req.body);
-            console.log(order)
             res.status(201).json(order);
         } catch (error) {
             res.status(500).json(error)

@@ -151,7 +151,7 @@ const Cart = () => {
                             <div className={styles.paypal}>
                                 <PayPalScriptProvider
                                     options={{
-                                        "client-id": process.env.PAYPAL_CLIENT_ID,
+                                        "client-id": "AeTL2worGaN33pRAbZFW_fDpfY74sovxRyzcI2r0tBm30YCs_FV354i4qwAvTor0FcizwfPLTLoAS8l4",
                                         components: "buttons",
                                         currency: "USD",
                                         "disable-funding": "credit,card,p24"
@@ -169,9 +169,8 @@ const Cart = () => {
                     )}
                 </div>
             </div>
-            {cash && (
-                <OrderDetails total={cart.total} createOrder={createOrder} />
-            )}
+            {cash && <OrderDetails total={cart.total} createOrder={createOrder}/>
+            }
         </div>
     )
 }

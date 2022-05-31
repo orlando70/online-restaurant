@@ -1,18 +1,8 @@
 .container {
-    height: calc(100vh - 100px);
+    height: calc(100vh);
+    top: 0;
     /* background-color: #d1411e; */
     overflow: hidden;
-}
-
-.arrowContainer {
-    position: absolute;
-    width: 7%;
-    height: 15%;
-    z-index: 20;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    cursor: pointer;
 }
 
 .wrapper {

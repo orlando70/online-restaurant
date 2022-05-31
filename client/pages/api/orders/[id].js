@@ -17,10 +17,10 @@ export async function handler(req, res) {
     }
     if (method === 'PUT') {
         try {
-            await Orders.findByIdAndUpdate(id, req.body, {
+            const product = await Orders.findByIdAndUpdate(id, req.body, {
                 new: true,
             });
-            res.status(200).json({message: 'updated successfully.'})
+            res.status(200).json({ message: 'updated successfully.', data: product });
         } catch (error) {
             res.status(500).json(error)
         }
