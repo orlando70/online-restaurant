@@ -5,31 +5,39 @@
     align-items: center;
 }
 
-.desc {
-    font-size: 24px;
-    color: #444;
-    width: 70%;
-}
-
-.title {
-    font-family: 'Rubik', sans-serif;
-}
-
 .wrapper {
+    width: 100%;
+}
+
+.textContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.text {
+    text-align: center;
+    height: 70%;
+    width: 60%;
+    text-transform: uppercase;
+}
+
+.text h1, .text span {
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #444;
+}
+
+.text span {
+    color: orange;
+}
+
+.food {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-@media screen and (max-width:480px) {
-    .title {
-        text-align: center;
-    }
-
-    .desc {
-        width: 90%;
-        text-align: center;
-    }
 }

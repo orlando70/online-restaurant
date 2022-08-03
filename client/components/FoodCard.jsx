@@ -6,7 +6,7 @@ const FoodCard = ({ food }) => {
     <Link href={`/products/${food._id}`}>
       <div className={styles.container}>
         <div className={styles.image}>
-          <Image src={food.image} alt="" width="500" height="500" objectFit='cover' />
+          <Image src={food.image} alt="" width="300" height="400" objectFit='cover' />
         </div>
         <span className={styles.price}> ${food.prices[0]}</span>
         <h1 className={styles.title}> {food.title}</h1>

@@ -1,0 +1,224 @@
+.container {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desc {
+    font-size: 24px;
+    color: #444;
+    width: 70%;
+}
+
+.title {
+    font-family: 'Rubik', sans-serif;
+}
+
+.choose {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 25px;
+    margin-bottom: 20px;
+}
+
+.chooseLeft,
+.chooseRight {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    padding: 5px 25px;
+}
+
+.chooseRight p {
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    padding: 5px 80px;
+    color: #444;
+    font-weight: bold;
+}
+
+.choose h2,
+.choose span {
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.choose h2 {
+    font-family: "Poppins", sans-serif;
+    padding: 5px 90px;
+    color: #444;
+}
+
+.choose span {
+    color: rgb(158, 74, 158);
+}
+
+.chooseCard {
+    display: flex;
+    height: 500px;
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.chooseCard .left,
+.chooseCard .right,
+.chooseCard .center {
+    flex: 1;
+    margin: 10px;
+}
+
+.cardWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    transition:all 0.5s ease-in-out;
+    text-align: center;
+}
+
+.cardWrapper:hover {
+    border-radius: 44px;
+    background: #ffffff;
+    box-shadow: 8px 8px 15px #bebebe,
+        -8px -8px 15px #ffffff;
+    transition:all 0.5s ease-in-out;
+}
+
+.icon {
+    position: absolute;
+    top: 30px;
+    left: 110px;
+}
+
+.box1 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    border-radius: 20%;
+    background-color: rgb(187, 232, 247);
+    z-index: -5;
+}
+
+.box2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    transform: rotate(15deg);
+    border-radius: 20%;
+    background-color: rgb(219, 240, 248);
+    z-index: -5;
+}
+
+.iconImage {
+    position: relative;
+    top: 15px;
+    left: 15px;
+}
+
+.cardDesc {
+    padding: 30px;
+    margin-top: 90px;
+}
+
+.cardDesc h5 {
+    font-weight: bold;
+    font-family: "Limelight", sans-serif;
+    font-size: 20px;
+    color: #444;
+}
+
+.cardDesc p {
+    font-family: "Poppins", sans-serif;
+    color: #444;
+    height: 120px;
+}
+
+.button {
+    padding: 10px;
+    background-color: #fff;
+    width: 120px;
+    font-size: 15px;
+    border-radius: 15px;
+    color:rgb(73, 50, 73);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    border-style: solid;
+    border-color: rgb(73, 50, 73);
+    transition: all .3s ease-in-out;
+}
+
+.cardWrapper:hover .button {
+    font-weight: 500;
+    padding: 10px;
+    width: 120px;
+    font-size: 15px;
+    border-radius: 15px;
+    color: #fff;
+    background: rgb(73, 50, 73);
+}
+
+.testimonial {
+    height: calc(100vh - 100px);
+    background-color: rgb(255, 247, 248);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonialLeft {
+    flex: 2;
+}
+
+.testimonialRight {
+    flex: 3;
+}
+
+.testimonial_wrapper {
+    margin: 40px 40px;
+    height: 90%;
+    padding: 20px;
+}
+
+.testimonial_wrapper h1, .testimonial_wrapper p {
+    font-family: "Poppins", sans-serif;
+    color: #444;
+}
+
+.testimonial_wrapper h1 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.testimonial_wrapper span {
+    color: orange;
+}
+
+.testimonial_wrapper p {
+    font-size: 15px;
+}
+
+.testimonialRight {
+    display: flex;
+}
+
+@media screen and (max-width:480px) {
+    .title {
+        text-align: center;
+    }
+
+    .desc {
+        width: 90%;
+        text-align: center;
+    }
+}

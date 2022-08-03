@@ -12,7 +12,7 @@ const Home = () => {
                       <Image src="/img/tree.jpg" alt="" width="100" height="100" objectFit='contain' />
                   </div>
                   <div className={styles.title}>
-                      <h1>Freshly harvested fruits and vegetables </h1>
+                      <h1>Enjoy freshly harvested fruits and vegetables </h1>
                   </div>
                   <div className={styles.desc}>
                       <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -24,7 +24,7 @@ const Home = () => {
                   <button className={styles.button}>Start Shopping</button>
               </div>
               <div className={styles.right}>
-                  <Image src="/img/home2.jpg" alt="" width="700" height="700" objectFit='contain' />
+                  <Image src="/img/home.jpg" alt="" width="700" height="700" objectFit='contain' />
               </div>
           </div>
       </div>

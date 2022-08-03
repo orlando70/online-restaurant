@@ -1,5 +1,5 @@
 .container {
-    width: 22%;
+    width: 24%;
     margin: 0px 5px;
     display: flex;
     flex-direction: column;
@@ -10,18 +10,14 @@
 }
 
 .image {
-    border: 1px solid #d7d7d7;
-    border-radius: 5px;
-    min-height: 150px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 10px;
+    height: 400px;
+    width: 300px;
+    border-radius: 20px;
     transition:all 0.5s ease-in-out;
 }
 
-.image:hover {
-    transform: scale(1.1);
-    transition:all 0.5s ease-in-out;
+.image img {
+    border-radius: 20px;
 }
 
 .title {

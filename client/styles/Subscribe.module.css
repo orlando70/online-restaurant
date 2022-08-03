@@ -1,0 +1,72 @@
+.container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 80px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 70%;
+    background-color: rgb(255, 246, 247);
+    background-image: url(../public/img/sub.png);
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    padding: 70px;
+}
+
+.textContainer {
+    text-align: center;
+    height: 400px;
+    width: 600px;
+    z-index: 5;
+}
+
+.textContainer h1, .textContainer p {
+    font-family: "Poppins", sans-serif;
+    color: rgb(95, 94, 94);
+}
+
+.textContainer h1 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.textContainer p {
+    font-size: 15px;
+    margin-bottom: 60px;
+}
+
+.textContainer input {
+    width: 600px;
+    padding: 20px;
+    border-style: none;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+}
+
+.textContainer span {
+    color: orange;
+}
+
+.button {
+    padding: 15px;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+    width: 100px;
+    position: relative;
+    right: 105px;
+}
+
+.email {
+    position: absolute;
+}

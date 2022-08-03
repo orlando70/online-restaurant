@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint \"/**/*.{js,jsx}\"",
+    "lint:fix": "eslint \"/**/*.{js,jsx}\" --fix"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^7.6.0",

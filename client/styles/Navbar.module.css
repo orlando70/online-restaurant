@@ -11,6 +11,16 @@ align-items: center;
 justify-content: space-between;
 }
 
+.left {
+    position: relative;
+}
+
+.tree {
+    position: relative;
+    top: 0;
+    left: 25px;
+}
+
 .item {
     flex: 1;
     display: flex;
@@ -97,8 +107,27 @@ justify-content: space-between;
 }
 
 .right {
-    display: flex;
-    flex: 1;        
+    position: relative;
+    display:block;
+    flex: 1;
+    min-height: 50vh;
+}
+
+.mainblob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -4;
+}
+.blob1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30%;
+    width: 40%;
+    z-index: -4;
 }
 
 .title {
@@ -111,6 +140,10 @@ justify-content: space-between;
 
 .desc {
     margin-left: 50px;
+}
+
+.buttons {
+    display: flex;
 }
 
 .button {
@@ -138,5 +171,4 @@ justify-content: space-between;
     border-radius: 5px;
     color: #fff;
     background: rgb(73, 50, 73);
-    
 }

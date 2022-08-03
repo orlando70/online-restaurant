@@ -12,7 +12,7 @@ const Home = () => {
                       <Image src="/img/tree.jpg" alt="" width="100" height="100" objectFit='contain' />
                   </div>
                   <div className={styles.title}>
-                      <h1>Delivered at your doorstep!</h1>
+                      <h1>Fastest delivery!</h1>
                   </div>
                   <div className={styles.desc}>
                       <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.

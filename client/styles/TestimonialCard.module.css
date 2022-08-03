@@ -1,0 +1,57 @@
+.testimonial_card {
+    flex: 1;
+    margin: 10px;
+}
+
+.testimonial_card_wrapper {
+    width: 220px;
+    margin: 10px;
+    position: relative;
+}
+
+.testimonial_card_image {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    top: 70px;
+    left: 20px;
+}
+
+.testimonial_card_image img {
+    border-radius: 10px;
+}
+
+.testimonial_card_text_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 75%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.testimonial_card_text {
+    margin-top: 80px;
+    height: 265px;
+    width: 180px;
+}
+
+.testimonial_card_text h3, .testimonial_card_text p, .testimonial_card_text span {
+    color: #444;
+    font-family: "Poppins", sans-serif;
+}
+
+.testimonial_card_text p {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.testimonial_card_text span {
+    font-size: 12px;
+}
+
+.testimonial_card_text h3 {
+    margin-bottom: 8px;
+}

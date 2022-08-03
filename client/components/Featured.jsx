@@ -6,13 +6,13 @@ import Slide1 from '../slides/slide1'
 import Slide2 from '../slides/slide2'
 import Slide3 from '../slides/slide3'
 
-const Featured = () => {
+const Featured = ({Admin}) => {
     const [index, setIndex] = useState(0);
     const delay = 5000;
     const images = [
-        <Slide1/>,
-        <Slide2/>,
-        <Slide3/>,
+        <Slide1 Admin={Admin}/>,
+        <Slide2 Admin={Admin}/>,
+        <Slide3 Admin={Admin}/>,
     ]
 
     const timeoutRef = useRef(null);

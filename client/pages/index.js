@@ -6,6 +6,8 @@ import styles from '../styles/Home.module.css'
 import {useState} from 'react'
 import Add from '../components/Add'
 import AddButton from '../components/AddButton'
+import MidSection from '../components/MidSection'
+import Subscribe from '../components/Subscribe'
 
 export default function Home({Foods, isAdmin}) {
   const [close, setClose] = useState(true);
@@ -16,10 +18,10 @@ export default function Home({Foods, isAdmin}) {
         <meta name="description" content="Gets you freshly cooked meals at your doorstep" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Featured/>
-      {isAdmin && <AddButton setClose={setClose}/>}
+      <Featured Admin={isAdmin}/>
+      <MidSection/>
       <FoodList Foods={Foods}/>
-      {!close && <Add setClose={setClose}/>}
+      <Subscribe/>
     </div>
   )
 }

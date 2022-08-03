@@ -1,37 +1,33 @@
-import Image from "next/image"
 import styles from "../styles/Footer.module.css"
 
 const Footer = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.items}>
-        <Image src="/img/featured1.jpg" alt="" layout="fill" objectFit="cover" />
-      </div>
-      <div className={styles.items}>
         <div className={styles.card}>
-          <h2 className={styles.motto}>HOME COOKED MEALS YOU NEED</h2>
+          <h3><span>GiTA</span> Salad</h3>
+          <p>
+            GiTA Salad is the pioneer of healthy fruit salad with high nutrition.
+          </p>
+          <h5>Copyright GiTA Salad.</h5>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>FIND OUR RESTAURANTS</h1>
+          <h4>Feature</h4>
+          <p>Menu</p>
+          <p>Promo</p>
+          <p>Contact</p>
+          <p>About us</p>
+        </div>
+        <div className={styles.card}>
+          <h4 className={styles.title}>Find Our Restaurant</h4>
           <p className={styles.text}>
             71 Abuloma Road.
             <br /> Port Harcourt
             <br /> 0800-1234-5678
           </p>
           <p className={styles.text}>
-            35b Upper Iweka .
-            <br /> Onitsha
-            <br /> 0800-5444-8908
-          </p>
-          <p className={styles.text}>
             2 Jevenik Avenue.
             <br /> Port Harcourt
             <br /> 0800-3444-5678
-          </p>
-          <p className={styles.text}>
-            135 Ozumba Mbadiwe.
-            <br /> Lagos
-            <br /> 0800-1234-5678
           </p>
         </div>
         <div className={styles.card}>
@@ -45,7 +41,6 @@ const Footer = () => {
             <br /> 9:00 - 11:00
           </p>
         </div>
-      </div>
     </div>
   )
 }
